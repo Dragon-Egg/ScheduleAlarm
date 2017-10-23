@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="org.dragon_egg.schedulealarm.MainActivity">
+    tools:context="org.dragon_egg.schedulealarm.activity.MainActivity">
 
     <TextView
         android:layout_width="wrap_content"
