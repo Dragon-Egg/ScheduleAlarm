@@ -3,16 +3,14 @@ package org.dragon_egg.schedulealarm.alarm;
 /**
  * Created by Crow314 on 2017/10/01.
  */
+import android.app.AlarmManager;
 import android.app.PendingIntent;
+import android.content.Context;
 import android.media.Ringtone;
 
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * Alarmの継承元となるクラス
- * 自身はOnceAlarmとして機能
- */
 public class Alarm implements Comparable<Alarm>, Serializable{
 
 	//################
@@ -100,20 +98,6 @@ public class Alarm implements Comparable<Alarm>, Serializable{
 		return result;
 	}
 
-	/**
-	 * 有効化時に実行し、AlarmをAlarmManagerに登録します。
-	 */
-	private void onEnable(){
-		//Receiver系が完成次第書きます
-	}
-
-	/**
-	 * 無効化時に実行し、AlarmをAlarmManagerから削除します。
-	 */
-	private void onDisable(){
-		//Receiver系が完成次第書きます
-	}
-
 	//########
 	//PublicMethod
 	//########
@@ -166,15 +150,6 @@ public class Alarm implements Comparable<Alarm>, Serializable{
 	 * @param enable
 	 */
 	public void setEnable(boolean enable) {
-		//enableを変更しないならなにもしない
-		if(this.enable == enable){
-			return;
-		}
-		if (enable){ //enableがtrueに変更される場合onEnableを呼ぶ
-			onEnable();
-		}else if(!enable){ //enableがfalseに変更される場合onDisableを呼ぶ
-			onDisable();
-		}
 		this.enable = enable;
 	}
 
